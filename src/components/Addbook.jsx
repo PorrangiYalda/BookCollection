@@ -16,7 +16,7 @@ export default function CreateBook() {
             genre: book.genre
         };
         axios.post('http://localhost:5000/books/add', bookvar)
-            .then((res)=>{window.location = '/'})
+            .then((res)=>{navigate('/');})
             .catch(err => console.error("Error adding the book:", err));
             console.log("handle submit is being called")
     };
