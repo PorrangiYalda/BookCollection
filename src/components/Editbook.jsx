@@ -8,7 +8,7 @@ export default function Editbook(){
 const { id } = useParams();
 const [getbook,setbook]=useState({title:'',author:'',genre:''})
 useEffect(()=>
-  {axios.get(`https://book-collection-kappa.vercel.app/books/book/${id}`) //??
+  {axios.get(`http://localhost:5000/books/book/${id}`) //??
 //axios get holds the response in response.data
 .then((response)=>{setbook(response.data)})
     
@@ -24,7 +24,7 @@ setbook((prevBook)=>({
 const onSubmit=(e)=>{
 e.preventDefault()
 const updatedBook = getbook
-axios.post(`https://book-collection-kappa.vercel.app/books/update/${id}`,updatedBook)
+axios.post(`http://localhost:5000/books/update/${id}`,updatedBook)
 .then((res) => {
     console.log(res.data); // Log response data (optional)
     window.location = '/'; // Redirect or handle success
