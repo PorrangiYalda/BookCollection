@@ -15,7 +15,7 @@ export default function CreateBook() {
             title: book.title,
             genre: book.genre
         };
-        axios.post('http://localhost:5000/books/add', bookvar)
+        axios.post('https://book-collection-kappa.vercel.app/books/add', bookvar)
             .then((res)=>{window.location = '/'})
             .catch(err => console.error("Error adding the book:", err));
             console.log("handle submit is being called")

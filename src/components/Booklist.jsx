@@ -32,7 +32,7 @@ export default function Booklist()  {
 const [books,setBooks] = useState([]);
 
 
-useEffect(()=>{axios.get('http://localhost:5000/books/')
+useEffect(()=>{axios.get('https://book-collection-kappa.vercel.app/books/')
     .then((response)=>{
         setBooks(response.data); //axios parses json to obj or array
     })
